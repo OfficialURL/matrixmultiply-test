@@ -6,7 +6,7 @@ mod tests {
     use nalgebra::U6;
     use rand::Rng;
     type Matrix6x6 = nalgebra::MatrixMN<f64, U6, U6>;
-    
+
     #[test]
     fn e6() {
         let e6 = [
@@ -210,8 +210,18 @@ mod tests {
         let mut rng = rand::thread_rng();
         let mut mat = e6[0].clone();
 
-        for _ in 0..2000000 {
+        for _ in 0..1000000 {
             mat *= e6[rng.gen_range(0..6)];
         }
+    }
+
+    #[test]
+    fn e6_2() {
+        e6();
+    }
+
+    #[test]
+    fn e6_3() {
+        e6();
     }
 }
