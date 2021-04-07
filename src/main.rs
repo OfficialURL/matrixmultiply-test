@@ -12,7 +12,7 @@ fn main() {
         mat += mat1 * mat2;
     }
 
-    println!("{}", mat)
+    println!("{}", mat);
 }
 
 fn rand_mat(rng: &mut ThreadRng) -> Matrix6x6 {
