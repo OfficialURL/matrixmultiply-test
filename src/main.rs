@@ -1,6 +1,5 @@
-use nalgebra::{storage::Owned, U6};
 use rand::{prelude::ThreadRng, Rng};
-type Matrix6x6 = nalgebra::Matrix<f64, U6, U6, Owned<f64, U6, U6>>;
+type Matrix6x6 = nalgebra::DMatrix<f64>;
 
 fn main() {
     let mut rng = rand::thread_rng();
@@ -16,5 +15,5 @@ fn main() {
 }
 
 fn rand_mat(rng: &mut ThreadRng) -> Matrix6x6 {
-    Matrix6x6::from_fn(|_, _| rng.gen())
+    Matrix6x6::from_fn(6, 6, |_, _| 2.0 * rng.gen::<f64>() - 1.0)
 }
