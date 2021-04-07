@@ -204,7 +204,7 @@ fn main() {
     let mut rng = rand::thread_rng();
     let mut mat = e6[0].clone();
 
-    for _ in 0..50000 {
+    for _ in 0..2000000 {
         mat *= e6[rng.gen_range(0..6)];
     }
 
